@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -17,13 +18,15 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-white/10">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="flex items-center gap-2">
-            <span className="text-primary text-2xl font-bold tracking-tight">
-              Sorra White
-            </span>
-            <span className="text-foreground text-sm font-light hidden sm:inline">
-              Night
-            </span>
+          <a href="#home" className="flex items-center">
+            <Image
+              src="/images/sorra_logo_transparent.png"
+              alt="Sorra White Night"
+              width={130}
+              height={40}
+              priority
+              className="h-9 w-auto sm:h-10"
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">

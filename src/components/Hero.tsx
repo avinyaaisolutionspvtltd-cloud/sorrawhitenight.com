@@ -19,14 +19,19 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <p className="text-primary text-sm uppercase tracking-[0.3em] mb-6">
-          Welcome to
+        <a href="#home" className="inline-block">
+          <Image
+            src="/images/sorra_logo_transparent.png"
+            alt="Sorra White Night"
+            width={420}
+            height={129}
+            priority
+            className="h-16 w-auto sm:h-24 md:h-32"
+          />
+        </a>
+        <p className="text-primary text-sm uppercase tracking-[0.3em] mb-6 mt-6">
+          Rooftop Restaurant &amp; Dining
         </p>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-          <span className="text-primary">Sorra White</span>
-          <br />
-          <span className="text-foreground/90 font-light">Night</span>
-        </h1>
         <p className="text-muted text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
           A premier rooftop dining experience in the heart of Wardha.
           <br />

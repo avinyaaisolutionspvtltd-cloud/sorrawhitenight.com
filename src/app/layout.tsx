@@ -51,6 +51,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/images/sorra_logo_transparent.png"
+        />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

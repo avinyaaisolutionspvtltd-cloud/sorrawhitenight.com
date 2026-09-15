@@ -1,11 +1,19 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="py-12 px-4 border-t border-white/5 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-primary text-xl font-bold">Sorra White Night</h3>
-            <p className="text-muted/60 text-sm mt-1">
+            <Image
+              src="/images/sorra_logo_transparent.png"
+              alt="Sorra White Night"
+              width={160}
+              height={49}
+              className="h-10 w-auto mx-auto md:mx-0 opacity-90"
+            />
+            <p className="text-muted/60 text-sm mt-3">
               Rooftop Dining &bull; Wardha
             </p>
           </div>
