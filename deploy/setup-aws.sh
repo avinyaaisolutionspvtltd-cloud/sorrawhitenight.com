@@ -2,7 +2,7 @@
 set -e
 
 # Configuration
-BUCKET_NAME="sorrawhitenight-website"
+BUCKET_NAME="www.sorrawhitenight.com"
 DOMAIN="sorrawhitenight.com"
 REGION="ap-south-1"
 

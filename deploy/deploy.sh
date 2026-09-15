@@ -2,7 +2,7 @@
 set -e
 
 # Configuration
-BUCKET_NAME="sorrawhitenight-website"
+BUCKET_NAME="www.sorrawhitenight.com"
 DISTRIBUTION_ID=""  # Add your CloudFront distribution ID after first deployment
 REGION="ap-south-1"
 
