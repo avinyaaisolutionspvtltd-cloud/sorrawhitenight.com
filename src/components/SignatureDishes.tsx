@@ -55,7 +55,7 @@ export default function SignatureDishes() {
         </Reveal>
       </div>
 
-      <Reveal className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scroll-smooth [scrollbar-width:thin] [scrollbar-color:var(--primary)_var(--background-deep)]">
+      <Reveal className="flex gap-5 overflow-x-auto overscroll-x-contain pb-6 snap-x snap-mandatory scroll-smooth [scrollbar-width:thin] [scrollbar-color:var(--primary)_var(--background-deep)]">
         {dishes.map((dish) => (
           <div
             key={dish.name}
@@ -76,7 +76,7 @@ export default function SignatureDishes() {
               <h3 className="serif-display text-2xl sm:text-3xl text-ivory font-medium">
                 {dish.name}
               </h3>
-              <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-16 group-hover:opacity-100 group-hover:mt-2">
+              <div className="mt-2 max-h-16 overflow-hidden opacity-100 transition-all duration-500 md:max-h-0 md:opacity-0 md:mt-0 md:group-hover:max-h-16 md:group-hover:opacity-100 md:group-hover:mt-2">
                 <p className="text-muted text-sm">{dish.desc}</p>
               </div>
               <div className="flex items-center gap-3 mt-4">

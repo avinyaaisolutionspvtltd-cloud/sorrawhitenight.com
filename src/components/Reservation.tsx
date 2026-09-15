@@ -96,7 +96,7 @@ export default function Reservation() {
               href={WHATSAPP_RESERVE}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-background-deep text-xs uppercase tracking-[0.24em] px-8 py-4 text-center transition-all duration-500"
+              className="mt-10 inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-primary hover:bg-primary-light text-background-deep text-xs uppercase tracking-[0.24em] px-8 py-4 text-center transition-all duration-500"
             >
               <WhatsAppIcon />
               Reserve Your Table
@@ -105,7 +105,7 @@ export default function Reservation() {
               href={WHATSAPP_GENERAL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center justify-center gap-2 text-primary-light/70 hover:text-primary-light text-xs uppercase tracking-[0.2em] transition-colors duration-500"
+              className="mt-3 inline-flex w-full sm:w-auto items-center justify-center gap-2 text-primary-light/70 hover:text-primary-light text-xs uppercase tracking-[0.2em] transition-colors duration-500"
             >
               <WhatsAppIcon className="w-3.5 h-3.5" />
               Chat with us on WhatsApp
