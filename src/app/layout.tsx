@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope, Great_Vibes } from "next/font/google";
+import InstallPrompt from "@/components/InstallPrompt";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -67,8 +68,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="image/png"
           href="/images/sorra_logo_transparent.png"
         />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0b0a08" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/icons/apple-touch-icon.png"
+          sizes="180x180"
+        />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <InstallPrompt />
+      </body>
     </html>
   );
 }

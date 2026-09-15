@@ -52,7 +52,7 @@ export default function Hero() {
           >
             Sorra
           </span>
-          <h1 className="serif-display font-medium text-ivory text-5xl sm:text-7xl md:text-8xl tracking-[0.18em] uppercase">
+          <h1 className="serif-display font-medium text-ivory text-[2rem] sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.12em] sm:tracking-[0.16em] md:tracking-[0.18em] uppercase">
             White Night
           </h1>
         </div>
