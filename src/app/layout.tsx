@@ -1,34 +1,46 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sorra White Night | Rooftop Restaurant & Dining | Wardha",
+  title: "Sorra White Night | Café & Restaurant | Wardha",
   description:
-    "Experience fine dining at Sorra White Night, Wardha's premier rooftop restaurant. Open 24 hours with outdoor seating, delicious multi-cuisine food, and stunning views. Located at Nagthana Square, Sawangi, Wardha, Maharashtra.",
+    "An elegant rooftop café and restaurant in Wardha. Good food, great vibes, better together. Perfect for fine dining, date nights, celebrations and special moments.",
   keywords: [
     "Sorra White Night",
+    "café Wardha",
     "restaurant Wardha",
     "rooftop dining Wardha",
-    "best restaurant Sawangi",
-    "24 hour restaurant Maharashtra",
+    "fine dining Maharashtra",
+    "date night restaurant",
+    "events Wardha",
     "multi-cuisine Wardha",
-    "outdoor dining Nagpur bypass",
   ],
   openGraph: {
-    title: "Sorra White Night | Rooftop Restaurant & Dining | Wardha",
+    title: "Sorra White Night | Café & Restaurant | Wardha",
     description:
-      "Experience fine dining at Sorra White Night, Wardha's premier rooftop restaurant. Open 24 hours with outdoor seating.",
+      "Good Food. Great Vibes. Better Together. An elegant rooftop café and restaurant in Wardha.",
     url: "https://sorrawhitenight.com",
     siteName: "Sorra White Night",
     locale: "en_IN",
@@ -36,9 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sorra White Night | Rooftop Restaurant & Dining | Wardha",
-    description:
-      "Experience fine dining at Sorra White Night, Wardha's premier rooftop restaurant.",
+    title: "Sorra White Night | Café & Restaurant | Wardha",
+    description: "Good Food. Great Vibes. Better Together.",
   },
   metadataBase: new URL("https://sorrawhitenight.com"),
 };
@@ -47,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${manrope.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />

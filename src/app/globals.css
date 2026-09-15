@@ -1,21 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --primary: #d4a853;
-  --primary-dark: #b8922e;
-  --muted: #a1a1aa;
+  --background: #0b0a08;
+  --background-deep: #070605;
+  --surface: #14120e;
+  --surface-light: #1b1813;
+  --primary: #c9a96a;
+  --primary-light: #e0c897;
+  --primary-dark: #a5824a;
+  --ivory: #f5efe3;
+  --muted: #a89f8d;
+  --beige: #e7dcc6;
+  --border-gold: rgba(201, 169, 106, 0.22);
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background-deep: var(--background-deep);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
   --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
+  --color-ivory: var(--ivory);
   --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-beige: var(--beige);
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-manrope);
+  --font-script: var(--font-great-vibes);
 }
 
 html {
@@ -24,11 +36,132 @@ html {
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ivory);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 ::selection {
   background: var(--primary);
-  color: var(--background);
+  color: var(--background-deep);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a251c;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Elegant gold line utility — a thin line that grows from left to right */
+.gold-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    transparent
+  );
+}
+
+.gold-line-short {
+  width: 64px;
+  height: 1px;
+  background: var(--primary);
+}
+
+/* Section label styled like a luxury brand eyebrow */
+.eyebrow {
+  font-family: var(--font-manrope);
+  font-size: 0.7rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* Script accent word */
+.script-accent {
+  font-family: var(--font-great-vibes);
+  color: var(--primary-light);
+}
+
+/* Serif display heading */
+.serif-display {
+  font-family: var(--font-cormorant);
+}
+
+/* Slow, cinematic image zoom on hover */
+.img-zoom {
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .img-zoom {
+  transform: scale(1.08);
+}
+
+/* Subtle gold frame on hover */
+.gold-frame {
+  border: 1px solid var(--border-gold);
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+.gold-frame:hover {
+  border-color: rgba(201, 169, 106, 0.55);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Glass surface */
+.glass {
+  background: rgba(20, 18, 14, 0.66);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-gold);
+}
+
+/* Smooth fade-in for reveal animations */
+.reveal-anim {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-anim.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Thin elegant text-shadow for readable overlay text on photos */
+.text-shadow-hero {
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Slow fade with scale for image reveal */
+.fade-in-soft {
+  animation: fadeInSoft 1.4s ease both;
+}
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal-anim {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

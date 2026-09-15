@@ -1,87 +1,111 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => setOffset(window.scrollY));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  const parallaxY = Math.min(offset * 0.35, 220);
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-deep"
     >
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         <Image
           src="/images/rooftop.webp"
-          alt="Sorra White Night rooftop dining"
+          alt="Sorra White Night rooftop restaurant"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center scale-110"
+          style={{ transform: `translateY(${parallaxY}px) scale(1.1)` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background-deep/70 via-background-deep/45 to-background" />
+        <div className="absolute inset-0 bg-background-deep/20" />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <a href="#home" className="inline-block">
-          <Image
-            src="/images/sorra_logo_transparent.png"
-            alt="Sorra White Night"
-            width={420}
-            height={129}
-            priority
-            className="h-16 w-auto sm:h-24 md:h-32"
-          />
-        </a>
-        <p className="text-primary text-sm uppercase tracking-[0.3em] mb-6 mt-6">
-          Rooftop Restaurant &amp; Dining
-        </p>
-        <p className="text-muted text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
-          A premier rooftop dining experience in the heart of Wardha.
-          <br />
-          Open 24 hours with stunning views and exceptional cuisine.
-        </p>
-        <p className="text-muted/60 text-sm mb-10">
-          Nagthana Square, Sawangi, Wardha &bull; Maharashtra
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-24 pb-32">
+        <p className="eyebrow mb-8 text-shadow-hero">Café &amp; Restaurant</p>
+
+        <div className="text-shadow-hero">
+          <span
+            className="script-accent block text-4xl sm:text-5xl md:text-6xl mb-1"
+            style={{ filter: "drop-shadow(0 2px 20px rgba(0,0,0,0.6))" }}
+          >
+            Sorra
+          </span>
+          <h1 className="serif-display font-medium text-ivory text-5xl sm:text-7xl md:text-8xl tracking-[0.18em] uppercase">
+            White Night
+          </h1>
+        </div>
+
+        <div className="flex items-center justify-center gap-4 my-8">
+          <span className="w-16 h-px bg-primary/60" />
+          <span className="w-1.5 h-1.5 rotate-45 bg-primary" />
+          <span className="w-16 h-px bg-primary/60" />
+        </div>
+
+        <h2 className="serif-display text-ivory text-2xl sm:text-3xl md:text-4xl font-light italic mb-4 text-shadow-hero">
+          Good Food. Great Vibes. Better Together.
+        </h2>
+        <p className="text-muted max-w-xl mx-auto leading-relaxed mb-10 text-shadow-hero">
+          A destination for unforgettable food, beautiful evenings and
+          memorable moments.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
+            href="#menu"
+            className="w-full sm:w-auto bg-primary hover:bg-primary-light text-background-deep text-xs uppercase tracking-[0.24em] px-9 py-4 transition-all duration-500 hover:shadow-[0_10px_40px_rgba(201,169,106,0.35)]"
+          >
+            Explore Menu
+          </a>
+          <a
             href="tel:+918329120266"
-            className="bg-primary hover:bg-primary-dark text-background px-8 py-3 rounded text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105"
+            className="w-full sm:w-auto border border-ivory/30 hover:border-primary text-ivory hover:text-primary-light text-xs uppercase tracking-[0.24em] px-9 py-4 transition-colors duration-500"
           >
             Reserve a Table
           </a>
-          <a
-            href="#menu"
-            className="border border-white/20 hover:border-primary text-foreground px-8 py-3 rounded text-sm uppercase tracking-widest transition-all duration-300 hover:text-primary"
-          >
-            View Menu
-          </a>
-        </div>
-
-        <div className="mt-20 flex items-center justify-center gap-8 text-muted/40 text-xs uppercase tracking-widest">
-          <span>Open 24 Hours</span>
-          <span className="w-1 h-1 bg-primary rounded-full" />
-          <span>Rooftop Dining</span>
-          <span className="w-1 h-1 bg-primary rounded-full" />
-          <span>Multi-Cuisine</span>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" className="text-muted/40 hover:text-primary transition-colors">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
-        </a>
-      </div>
+      <a
+        href="#about"
+        aria-label="Scroll to discover"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-primary/70 hover:text-primary-light transition-colors"
+      >
+        <span className="text-[0.6rem] tracking-[0.3em] uppercase">Scroll</span>
+        <span className="h-10 w-px relative overflow-hidden bg-primary/30">
+          <span className="absolute top-0 left-0 w-full h-3 bg-primary animate-[scrollIndicator_1.8s_ease-in-out_infinite]" />
+        </span>
+        <style jsx>{`
+          @keyframes scrollIndicator {
+            0% {
+              transform: translateY(-100%);
+            }
+            55%,
+            100% {
+              transform: translateY(320%);
+            }
+          }
+        `}</style>
+      </a>
     </section>
   );
 }
