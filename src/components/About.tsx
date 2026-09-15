@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-4 bg-background">
@@ -46,16 +48,14 @@ export default function About() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-primary/10 to-primary/5 border border-white/5 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-6xl mb-4">&#9734;</div>
-                <p className="text-primary text-lg font-semibold">
-                  Rooftop Views
-                </p>
-                <p className="text-muted/60 text-sm mt-2">
-                  Panoramic cityscape dining
-                </p>
-              </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/5">
+              <Image
+                src="/menu-images/dining-ambiance.jpg"
+                alt="Sorra White Night dining ambiance"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-primary/20 rounded-lg -z-10" />
             <div className="absolute -top-4 -left-4 w-32 h-32 border border-primary/10 rounded-lg -z-10" />

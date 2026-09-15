@@ -1,13 +1,21 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/95 to-background/80"
+      className="relative min-h-screen flex items-center justify-center bg-background"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_var(--primary)_0%,_transparent_50%)] opacity-5" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <Image
+          src="/images/rooftop.webp"
+          alt="Sorra White Night rooftop dining"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">

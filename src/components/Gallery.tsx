@@ -1,39 +1,35 @@
+import Image from "next/image";
+
 const galleryItems = [
   {
-    title: "Rooftop Ambiance",
-    description: "Stunning views from our rooftop seating",
-    gradient: "from-primary/20 to-primary/5",
-    icon: "&#9788;",
+    src: "/images/rooftop.webp",
+    title: "Rooftop Dining",
+    description: "Dine under the open sky",
+    span: true,
   },
   {
-    title: "Fine Dining",
-    description: "Elegant table settings for special occasions",
-    gradient: "from-primary/15 to-primary/5",
-    icon: "&#9733;",
+    src: "/images/roof.webp",
+    title: "Outdoor Space",
+    description: "Spacious rooftop seating",
+    span: false,
   },
   {
-    title: "Outdoor Seating",
-    description: "Enjoy meals under the open sky",
-    gradient: "from-primary/10 to-primary/5",
-    icon: "&#9728;",
+    src: "/images/dining.webp",
+    title: "Dining Area",
+    description: "Comfortable indoor seating",
+    span: false,
   },
   {
-    title: "Late Night Bites",
-    description: "Open 24 hours for your cravings",
-    gradient: "from-primary/20 to-primary/5",
-    icon: "&#9790;",
+    src: "/images/day-vew.webp",
+    title: "Daytime Views",
+    description: "Enjoy the daylight ambiance",
+    span: false,
   },
   {
-    title: "Fresh Cuisine",
-    description: "Prepared with the finest ingredients",
-    gradient: "from-primary/15 to-primary/5",
-    icon: "&#9829;",
-  },
-  {
-    title: "Private Events",
-    description: "Book our space for celebrations",
-    gradient: "from-primary/10 to-primary/5",
-    icon: "&#9827;",
+    src: "/images/garden.webp",
+    title: "Garden Seating",
+    description: "Surrounded by greenery",
+    span: false,
   },
 ];
 
@@ -50,7 +46,7 @@ export default function Gallery() {
             <span className="text-primary"> Sorra White</span>
           </h2>
           <p className="text-muted mt-4 max-w-xl mx-auto">
-            Glimpses of the experience that awaits you.
+            A glimpse of the ambiance waiting for you.
           </p>
         </div>
 
@@ -58,27 +54,30 @@ export default function Gallery() {
           {galleryItems.map((item) => (
             <div
               key={item.title}
-              className="group relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer"
+              className={`group relative aspect-[4/3] rounded-lg overflow-hidden ${
+                item.span ? "lg:col-span-2 sm:col-span-2" : ""
+              }`}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${item.gradient} transition-all duration-500 group-hover:scale-105`}
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                <span
-                  className="text-4xl text-primary/60 mb-3"
-                  dangerouslySetInnerHTML={{ __html: item.icon }}
-                />
-                <h3 className="text-foreground font-semibold text-lg mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                <h3 className="text-foreground font-semibold text-lg">
                   {item.title}
                 </h3>
-                <p className="text-muted/60 text-sm">{item.description}</p>
+                <p className="text-muted text-sm">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         <p className="text-center text-muted/40 text-sm mt-8">
-          Photos coming soon. Visit us to experience the ambiance firsthand.
+          Visit us to experience the ambiance firsthand.
         </p>
       </div>
     </section>

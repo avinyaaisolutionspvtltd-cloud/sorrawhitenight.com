@@ -1,6 +1,9 @@
+import Image from "next/image";
+
 const menuCategories = [
   {
     name: "Starters",
+    image: "/menu-images/starters.jpg",
     items: [
       { name: "Paneer Tikka", price: "₹180", veg: true },
       { name: "Chicken Tikka", price: "₹220", veg: false },
@@ -10,6 +13,7 @@ const menuCategories = [
   },
   {
     name: "Main Course",
+    image: "/menu-images/main-course.jpg",
     items: [
       { name: "Butter Chicken", price: "₹280", veg: false },
       { name: "Paneer Butter Masala", price: "₹220", veg: true },
@@ -19,6 +23,7 @@ const menuCategories = [
   },
   {
     name: "Chinese",
+    image: "/menu-images/chinese.jpg",
     items: [
       { name: "Hakka Noodles", price: "₹160", veg: true },
       { name: "Chilli Chicken", price: "₹220", veg: false },
@@ -28,6 +33,7 @@ const menuCategories = [
   },
   {
     name: "Beverages",
+    image: "/menu-images/beverages.jpg",
     items: [
       { name: "Fresh Lime Soda", price: "₹60", veg: true },
       { name: "Mango Lassi", price: "₹80", veg: true },
@@ -59,12 +65,23 @@ export default function Menu() {
           {menuCategories.map((category) => (
             <div
               key={category.name}
-              className="bg-background border border-white/5 rounded-lg p-6"
+              className="bg-background border border-white/5 rounded-lg overflow-hidden"
             >
-              <h3 className="text-primary text-lg font-semibold uppercase tracking-wider mb-6 pb-3 border-b border-white/10">
-                {category.name}
-              </h3>
-              <div className="space-y-4">
+              <div className="relative h-40 mb-6">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                <h3 className="absolute bottom-3 left-6 text-primary text-lg font-semibold uppercase tracking-wider">
+                  {category.name}
+                </h3>
+              </div>
+              <div className="px-6 pb-6">
+                <div className="space-y-4">
                 {category.items.map((item) => (
                   <div
                     key={item.name}
@@ -86,6 +103,7 @@ export default function Menu() {
                     </span>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           ))}
