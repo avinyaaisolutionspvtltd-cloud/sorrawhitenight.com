@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { WHATSAPP_RESERVE } from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -68,9 +70,12 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <a
-            href="tel:+918329120266"
-            className="inline-block border border-primary/40 hover:bg-primary hover:text-background-deep text-primary-light text-xs uppercase tracking-[0.22em] px-6 py-3 transition-all duration-500"
+            href={WHATSAPP_RESERVE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-primary/40 hover:bg-primary hover:text-background-deep text-primary-light text-xs uppercase tracking-[0.22em] px-6 py-3 transition-all duration-500"
           >
+            <WhatsAppIcon />
             Reserve a Table
           </a>
         </div>
@@ -113,10 +118,13 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="tel:+918329120266"
+            href={WHATSAPP_RESERVE}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
-            className="mt-2 inline-block bg-primary text-background-deep text-xs uppercase tracking-[0.22em] px-6 py-3 text-center transition-colors"
+            className="mt-2 inline-flex items-center justify-center gap-2 bg-primary text-background-deep text-xs uppercase tracking-[0.22em] px-6 py-3 text-center transition-colors"
           >
+            <WhatsAppIcon />
             Reserve a Table
           </a>
         </div>

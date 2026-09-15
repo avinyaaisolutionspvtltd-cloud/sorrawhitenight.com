@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { WHATSAPP_RESERVE } from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 
 export default function Hero() {
   const [offset, setOffset] = useState(0);
@@ -77,9 +79,12 @@ export default function Hero() {
             Explore Menu
           </a>
           <a
-            href="tel:+918329120266"
-            className="w-full sm:w-auto border border-ivory/30 hover:border-primary text-ivory hover:text-primary-light text-xs uppercase tracking-[0.24em] px-9 py-4 transition-colors duration-500"
+            href={WHATSAPP_RESERVE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-ivory/30 hover:border-primary text-ivory hover:text-primary-light text-xs uppercase tracking-[0.24em] px-9 py-4 transition-colors duration-500"
           >
+            <WhatsAppIcon />
             Reserve a Table
           </a>
         </div>

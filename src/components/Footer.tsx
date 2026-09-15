@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  WHATSAPP_RESERVE,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  EMAIL,
+} from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 
 const quickLinks = [
   { href: "#home", label: "Home" },
@@ -76,18 +83,18 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  href="tel:+918329120266"
+                  href={PHONE_TEL}
                   className="text-muted hover:text-primary-light transition-colors"
                 >
-                  +91 8329 120 266
+                  {PHONE_DISPLAY}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:sorra.whitenight@gmail.com"
+                  href={`mailto:${EMAIL}`}
                   className="text-muted hover:text-primary-light transition-colors"
                 >
-                  sorra.whitenight@gmail.com
+                  {EMAIL}
                 </a>
               </li>
               <li className="text-muted leading-relaxed">
@@ -98,6 +105,15 @@ export default function Footer() {
             </ul>
 
             <div className="flex gap-3 mt-6">
+              <a
+                href={WHATSAPP_RESERVE}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-10 h-10 flex items-center justify-center border border-border-gold text-muted hover:text-primary-light hover:border-primary transition-all"
+              >
+                <WhatsAppIcon />
+              </a>
               <a
                 href="https://www.instagram.com/"
                 target="_blank"

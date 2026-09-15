@@ -1,4 +1,12 @@
 import Reveal from "./Reveal";
+import {
+  WHATSAPP_RESERVE,
+  WHATSAPP_GENERAL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  EMAIL,
+} from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 
 const hours = [
   { day: "Monday", time: "Open 24 Hours" },
@@ -49,20 +57,20 @@ export default function Reservation() {
               <div>
                 <p className="eyebrow mb-2">Phone</p>
                 <a
-                  href="tel:+918329120266"
+                  href={PHONE_TEL}
                   className="text-ivory hover:text-primary-light transition-colors text-lg"
                 >
-                  +91 8329 120 266
+                  {PHONE_DISPLAY}
                 </a>
               </div>
 
               <div>
                 <p className="eyebrow mb-2">Email</p>
                 <a
-                  href="mailto:sorra.whitenight@gmail.com"
+                  href={`mailto:${EMAIL}`}
                   className="text-muted hover:text-primary-light transition-colors"
                 >
-                  sorra.whitenight@gmail.com
+                  {EMAIL}
                 </a>
               </div>
 
@@ -85,10 +93,22 @@ export default function Reservation() {
             </div>
 
             <a
-              href="tel:+918329120266"
-              className="mt-10 inline-block bg-primary hover:bg-primary-light text-background-deep text-xs uppercase tracking-[0.24em] px-8 py-4 text-center transition-all duration-500"
+              href={WHATSAPP_RESERVE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-background-deep text-xs uppercase tracking-[0.24em] px-8 py-4 text-center transition-all duration-500"
             >
+              <WhatsAppIcon />
               Reserve Your Table
+            </a>
+            <a
+              href={WHATSAPP_GENERAL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center justify-center gap-2 text-primary-light/70 hover:text-primary-light text-xs uppercase tracking-[0.2em] transition-colors duration-500"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5" />
+              Chat with us on WhatsApp
             </a>
           </Reveal>
 

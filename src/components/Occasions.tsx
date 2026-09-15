@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import { WHATSAPP_EVENT } from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 
 const occasions = [
   {
@@ -80,9 +82,12 @@ export default function Occasions() {
 
         <Reveal className="text-center mt-14">
           <a
-            href="tel:+918329120266"
-            className="inline-block border border-primary/40 hover:bg-primary hover:text-background-deep text-primary-light text-xs uppercase tracking-[0.24em] px-10 py-4 transition-all duration-500"
+            href={WHATSAPP_EVENT}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-primary/40 hover:bg-primary hover:text-background-deep text-primary-light text-xs uppercase tracking-[0.24em] px-10 py-4 transition-all duration-500"
           >
+            <WhatsAppIcon />
             Plan Your Event
           </a>
         </Reveal>
