@@ -70,9 +70,9 @@ const categories = [
   },
   {
     name: "Regional Special",
-    image: "/menu-images/matki-usal.jpg",
-    dish: "Matki Usal",
-    desc: "Sprouted moth beans in a Maharashtrian masala broth",
+    image: "/menu-images/sabudana-khichdi.jpg",
+    dish: "Sabudana Khichdi",
+    desc: "Pearl-sago with peanuts, cumin and curry leaves — a fasting favourite",
   },
 ];
 
