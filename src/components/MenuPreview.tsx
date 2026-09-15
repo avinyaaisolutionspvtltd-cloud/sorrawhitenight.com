@@ -3,46 +3,76 @@ import Reveal from "./Reveal";
 
 const categories = [
   {
-    name: "Starters",
-    image: "/menu-images/starters.jpg",
-    dish: "Paneer Tikka",
-    price: "₹180",
-    desc: "Char-grilled cottage cheese, smoked in our clay oven",
+    name: "Street Favourite",
+    image: "/menu-images/vada-pav.jpg",
+    dish: "Vada Pav",
+    desc: "Crunchy potato fritter in soft pav, mint & garlic chutney",
   },
   {
-    name: "Main Course",
-    image: "/menu-images/main-course.jpg",
-    dish: "Butter Chicken",
-    price: "₹280",
-    desc: "Velvety tomato–ginger gravy, slow simmered",
+    name: "Street Favourite",
+    image: "/menu-images/misal-pav.jpg",
+    dish: "Misal Pav",
+    desc: "Spicy sprout curry, crunchy farsan, pav on the side",
   },
   {
-    name: "Chinese / Asian",
-    image: "/menu-images/chinese.jpg",
-    dish: "Hakka Noodles",
-    price: "₹160",
-    desc: "Wok-tossed noodles with garden vegetables",
+    name: "Street Favourite",
+    image: "/menu-images/batata-vada.jpg",
+    dish: "Batata Vada",
+    desc: "Golden fried spiced potato, served with thenga chutney",
   },
   {
-    name: "Italian / Continental",
-    image: "/menu-images/italian.jpg",
-    dish: "Fettuccine Alfredo",
-    price: "₹320",
-    desc: "Silky parmesan cream, hand-rolled pasta",
+    name: "Street Favourite",
+    image: "/menu-images/tarri-poha.jpg",
+    dish: "Tarri Poha",
+    desc: "The fragrant, spicy curry-with-poha from the Nagpur school",
   },
   {
-    name: "Desserts",
-    image: "/menu-images/dessert.jpg",
-    dish: "Molten Lava Cake",
-    price: "₹150",
-    desc: "Warm chocolate heart with vanilla ice cream",
+    name: "Rassa & Curry",
+    image: "/menu-images/saoji-chicken.jpg",
+    dish: "Saoji Chicken",
+    desc: "Vidarbha's fiery, aromatic curry — slow, dark, famous",
   },
   {
-    name: "Beverages",
-    image: "/menu-images/beverages.jpg",
-    dish: "Sorra Cold Coffee",
-    price: "₹90",
-    desc: "Brewed dark, frothed to perfection",
+    name: "Rassa & Curry",
+    image: "/menu-images/shev-bhaji.jpg",
+    dish: "Shev Bhaji",
+    desc: "Crunchy sev folded into a tangy vegetable curry",
+  },
+  {
+    name: "Rassa & Curry",
+    image: "/menu-images/zunka-bhakri.jpg",
+    dish: "Zunka Bhakri",
+    desc: "Gram-flour zunka with the rustic jowar bhakri",
+  },
+  {
+    name: "Traditional Plate",
+    image: "/menu-images/thalipeeth.jpg",
+    dish: "Thalipeeth",
+    desc: "Multigrain bhajani pancake, crisp edges, ghee on top",
+  },
+  {
+    name: "Traditional Plate",
+    image: "/menu-images/pithla-bhakri.jpg",
+    dish: "Pithla Bhakri",
+    desc: "Velvety besan pithla with a robust millet bhakri",
+  },
+  {
+    name: "Mithai",
+    image: "/menu-images/puran-poli.jpg",
+    dish: "Puran Poli",
+    desc: "Sweet chana-dal stuffed flatbread, drenched in ghee",
+  },
+  {
+    name: "Mithai",
+    image: "/menu-images/modak.jpg",
+    dish: "Modak",
+    desc: "Steamed dumplings of coconut and jaggery — Ganesh's favourite",
+  },
+  {
+    name: "Regional Special",
+    image: "/menu-images/matki-usal.jpg",
+    dish: "Matki Usal",
+    desc: "Sprouted moth beans in a Maharashtrian masala broth",
   },
 ];
 
@@ -53,7 +83,7 @@ export default function MenuPreview() {
         <Reveal className="text-center mb-16">
           <p className="eyebrow mb-6">Our Menu</p>
           <h2 className="serif-display text-4xl sm:text-5xl md:text-6xl font-light text-ivory leading-[1.1]">
-            A Taste of <span className="italic text-primary-light">Tonight</span>
+            Tastes of <span className="italic text-primary-light">Wardha</span>
           </h2>
           <div className="gold-line-short mx-auto mt-8" />
         </Reveal>
@@ -61,7 +91,7 @@ export default function MenuPreview() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((item, index) => (
             <Reveal
-              key={item.name}
+              key={item.dish}
               delay={(index % 3) * 110}
               className="group relative overflow-hidden gold-frame bg-surface"
             >
@@ -80,14 +110,9 @@ export default function MenuPreview() {
               </div>
 
               <div className="p-6">
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="serif-display text-2xl text-ivory font-medium">
-                    {item.dish}
-                  </h3>
-                  <span className="text-primary-light font-medium tracking-wide whitespace-nowrap">
-                    {item.price}
-                  </span>
-                </div>
+                <h3 className="serif-display text-2xl text-ivory font-medium">
+                  {item.dish}
+                </h3>
                 <p className="text-muted text-sm mt-2 leading-relaxed">
                   {item.desc}
                 </p>
@@ -102,7 +127,7 @@ export default function MenuPreview() {
             href="#dishes"
             className="inline-block border border-primary/40 hover:bg-primary hover:text-background-deep text-primary-light text-xs uppercase tracking-[0.24em] px-10 py-4 transition-all duration-500"
           >
-            View Full Menu
+            View Signature Dishes
           </a>
         </Reveal>
       </div>

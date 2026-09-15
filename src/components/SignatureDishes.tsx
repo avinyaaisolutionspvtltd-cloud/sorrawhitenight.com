@@ -3,40 +3,34 @@ import Reveal from "./Reveal";
 
 const dishes = [
   {
-    image: "/menu-images/main-course.jpg",
-    name: "Hyderabadi Biryani",
-    desc: "Long-grain basmati, saffron, slow dum",
-    price: "₹280",
+    image: "/menu-images/saoji-chicken.jpg",
+    name: "Saoji Chicken",
+    desc: "Vidarbha's legendary dark curry, slow-cooked",
   },
   {
-    image: "/menu-images/chinese.jpg",
-    name: "Chilli Chicken",
-    desc: "Crisp tossed, soy & roasted chilli glaze",
-    price: "₹220",
+    image: "/menu-images/misal-pav.jpg",
+    name: "Misal Pav",
+    desc: "Crunchy, spicy sprout curry, pav on the side",
   },
   {
-    image: "/menu-images/italian.jpg",
-    name: "Truffle Alfredo",
-    desc: "Hand-rolled pasta in truffle cream",
-    price: "₹340",
+    image: "/menu-images/puran-poli.jpg",
+    name: "Puran Poli",
+    desc: "Sweet lentil flatbread, soaked in ghee",
   },
   {
-    image: "/menu-images/dessert.jpg",
-    name: "Molten Lava Cake",
-    desc: "Warm centre, vanilla bean ice cream",
-    price: "₹150",
+    image: "/menu-images/modak.jpg",
+    name: "Modak",
+    desc: "Coconut-jaggery steamed dumpling",
   },
   {
-    image: "/menu-images/coffee.jpg",
-    name: "Signature Latte",
-    desc: "Single-origin, velvet microfoam",
-    price: "₹120",
+    image: "/menu-images/vada-pav.jpg",
+    name: "Vada Pav",
+    desc: "Crisp potato fritter, garlic chutney, soft pav",
   },
   {
-    image: "/menu-images/cocktail.jpg",
-    name: "Evening Tonic",
-    desc: "House-something, slow evening sipper",
-    price: "₹180",
+    image: "/menu-images/tarri-poha.jpg",
+    name: "Tarri Poha",
+    desc: "Hot curry-drenched poha, Nagpur style",
   },
 ];
 
@@ -80,10 +74,7 @@ export default function SignatureDishes() {
                 <p className="text-muted text-sm">{dish.desc}</p>
               </div>
               <div className="flex items-center gap-3 mt-4">
-                <span className="text-primary-light tracking-widest text-lg">
-                  {dish.price}
-                </span>
-                <span className="w-8 h-px bg-primary/50 transition-all duration-500 group-hover:w-16" />
+                <span className="w-10 h-px bg-primary/50 transition-all duration-500 group-hover:w-16" />
               </div>
             </div>
           </div>
