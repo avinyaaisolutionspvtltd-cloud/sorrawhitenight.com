@@ -5,46 +5,53 @@ import { WhatsAppIcon } from "./icons";
 
 const occasions = [
   {
-    title: "Family Dining",
-    image: "/images/dining.webp",
-    note: "Long tables, laughter and seconds",
+    title: "Birthday Party",
+    image: "/images/celebration-birthday.jpg",
+    note: "Cakes, toasts and unforgettable entrances",
   },
   {
-    title: "Date Nights",
-    image: "/menu-images/dining-ambiance.jpg",
+    title: "Kitty Party",
+    image: "/menu-images/cocktail.jpg",
+    note: "Cards, chatter and laughter over drinks",
+  },
+  {
+    title: "Wedding Anniversary",
+    image: "/images/dining.webp",
     note: "Candlelight and closer conversations",
   },
   {
-    title: "Birthday Celebrations",
-    image: "/menu-images/toast.jpg",
-    note: "Cake, toasts and unforgettable entrances",
-  },
-  {
-    title: "Corporate Gatherings",
+    title: "Retirement Program",
     image: "/images/rooftop.webp",
-    note: "Business over beautiful evenings",
+    note: "Honour a lifetime over a beautiful evening",
   },
   {
-    title: "Private Events",
+    title: "Ring Ceremony",
+    image: "/menu-images/toast.jpg",
+    note: "Little moments, grand celebrations",
+  },
+  {
+    title: "And More Little Moments",
     image: "/images/roof.webp",
-    note: "Your evening, entirely your own",
-  },
-  {
-    title: "Special Occasions",
-    image: "/menu-images/cocktail.jpg",
     note: "Because some moments deserve more",
   },
 ];
 
 export default function Occasions() {
   return (
-    <section id="events" className="py-24 sm:py-32 px-5 sm:px-8 bg-background-deep">
+    <section
+      id="events"
+      className="py-24 sm:py-32 px-5 sm:px-8 bg-background-deep"
+    >
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-16">
-          <p className="eyebrow mb-6">Occasions &amp; Events</p>
+          <p className="eyebrow mb-6">Booking &amp; Celebrations</p>
           <h2 className="serif-display text-4xl sm:text-5xl md:text-6xl font-light text-ivory leading-[1.1]">
-            Made for <span className="italic text-primary-light">Every Memory</span>
+            Celebrate With <span className="italic text-primary-light">Us</span>
           </h2>
+          <p className="text-muted max-w-2xl mx-auto mt-5 leading-relaxed">
+            Birthday parties, kitty parties, with more little moments in between
+            — we host them all.
+          </p>
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
