@@ -1,60 +1,39 @@
-# Two Sky Dine In - Website
+# Sorra White Night — Website
 
-Official website for Two Sky Dine In, a rooftop restaurant in Wardha, Maharashtra.
+Official website for **Sorra White Night**, an upscale rooftop café & restaurant in Wardha, Maharashtra.
+
+Live at [https://www.sorrawhitenight.com](https://www.sorrawhitenight.com)
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (Static Export)
-- **Styling:** Tailwind CSS
-- **Hosting:** AWS S3 + CloudFront
+- **Framework:** Next.js 16 (static export — `output: "export"`)
+- **Styling:** Tailwind CSS v4
+- **Icons/Fonts:** Google Fonts via `next/font` (Cormorant Garamond, Manrope, Great Vibes)
+- **Hosting:** AWS S3 static website + Cloudflare CDN (HTTPS)
 
-## Local Development
+## Quick Start
 
 ```bash
 npm install
-npm run dev
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
-
-## Build
+Verify before committing:
 
 ```bash
-npm run build
+npm run lint
+npm run build      # static export → out/
 ```
 
-Static files will be in the `out/` directory.
+## Docs
 
-## AWS Deployment
+Full agent/developer context lives in [`docs/`](docs/README.md):
+overview, tech stack, architecture, conventions, local setup, deployment, and maintenance tasks.
 
-### First-time Setup
+## Deployment
 
-```bash
-./deploy/setup-aws.sh
-```
-
-### Deploy Updates
-
-```bash
-./deploy/deploy.sh
-```
-
-## AWS Monthly Cost Estimate
-
-| Service | Cost |
-|---------|------|
-| S3 (Static Hosting) | ~$0.02 |
-| CloudFront (CDN) | ~$1-5 |
-| Route 53 (DNS) | ~$0.50 |
-| **Total** | **~$2-6/month** |
-
-## Domain Configuration
-
-1. Purchase SSL certificate in AWS ACM (us-east-1 region)
-2. Create CloudFront distribution with custom domain
-3. Update DNS records:
-   - `sorrawhitenight.com` → CloudFront alias
-   - `www.sorrawhitenight.com` → CloudFront alias
+Site is static export in `out/`, synced to the S3 bucket `www.sorrawhitenight.com`,
+fronted by Cloudflare. See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the runbook.
 
 ## Contact
 
